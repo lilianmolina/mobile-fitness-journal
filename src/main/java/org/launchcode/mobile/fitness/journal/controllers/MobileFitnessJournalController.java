@@ -31,27 +31,27 @@ public class MobileFitnessJournalController {
 
     //=================BEGINNING CODE FOR USER REGISTRATION================
 
-    @RequestMapping(method = RequestMethod.GET, value = "register")
+    @RequestMapping(method = RequestMethod.GET, value = "registration")
     public String register(Model model) {
         model.addAttribute("title", "Register");
         model.addAttribute(new User());
-        return "register";
+        return "registration";
     }
 
-    @RequestMapping(value = "register", method = RequestMethod.POST)
-    public String add(Model model, @ModelAttribute @Valid User user,
+    @RequestMapping(value = "registration", method = RequestMethod.POST)
+    public String add(Model model, @ModelAttribute @Valid User newUser,
                       Errors errors) {
 
-        model.addAttribute(user);
+        model.addAttribute(newUser);
 
         if (errors.hasErrors()) {
-            return "register";
+            return "registration";
 
         }
 
-        userDao.save(user);
+        userDao.save(newUser);
 
-        return "add";
+        return "homepage";
     }
 
     //-----------------ENDING CODE FOR USER REGISTRATION---------------

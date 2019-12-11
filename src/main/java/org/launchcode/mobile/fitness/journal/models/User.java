@@ -24,7 +24,7 @@ public class User {
     @Size(min=5, message = "Password must be at least 5 characters long")
     private String password;
 
-    @Transient
+//    @Transient
     @NotNull(message = "Passwords do not match")
     private String verifyPassword;
 
