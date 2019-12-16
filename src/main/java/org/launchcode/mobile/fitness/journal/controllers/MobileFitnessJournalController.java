@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
 
 
 @Controller
-@RequestMapping
+@RequestMapping(value = "")
 public class MobileFitnessJournalController {
     @Autowired
     private UserDao userDao;
@@ -27,14 +28,19 @@ public class MobileFitnessJournalController {
         return "homepage";
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "homepage")
+    public String home(Model model) {
+        return "homepage";
+    }
+
     //---------------------------------------------------------
 
     //=================BEGINNING CODE FOR USER REGISTRATION================
 
     @RequestMapping(method = RequestMethod.GET, value = "registration")
     public String register(Model model) {
-        model.addAttribute("title", "Register");
         model.addAttribute(new User());
+        model.addAttribute("title", "Registration");
         return "registration";
     }
 
@@ -51,7 +57,7 @@ public class MobileFitnessJournalController {
 
         userDao.save(newUser);
 
-        return "homepage";
+        return "redirect:/homepage";
     }
 
     //-----------------ENDING CODE FOR USER REGISTRATION---------------

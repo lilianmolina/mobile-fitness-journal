@@ -25,9 +25,9 @@ public class User {
     private String password;
 
 //    @Transient
-    @NotNull(message = "Passwords do not match")
+   /* @NotNull(message = "Passwords do not match")
     private String verifyPassword;
-
+*/
  /*   @OneToMany
     @JoinColumn(name = "user_id")
     private List<Location> location = new ArrayList<>();*/
@@ -55,9 +55,10 @@ public class User {
     public void setPassword(String password) {
 
         this.password = password;
-        checkPassword();
+        /*checkPassword();*/
     }
 
+/*
     public String getVerifyPassword() { return verifyPassword; }
 
     public void setVerifyPassword(String verifyPassword) {
@@ -73,6 +74,7 @@ public class User {
 
 
     }
+*/
 
 /*    public List<Location> getLocation() {
         return location;

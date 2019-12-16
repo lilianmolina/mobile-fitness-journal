@@ -15,7 +15,7 @@
 <form th:object="${user}" method="post"> <!--th:action="@{registration}"-->
     <div class="form-group">
         <label th:for="exampleInputUsername1">Username</label>
-        <input type="username" class="form-control" id="exampleInputUsername1" aria-describedby="usernameHelp" placeholder="Enter username" th:field="*{username}">
+        <input type="text" class="form-control" id="exampleInputUsername1" aria-describedby="usernameHelp" placeholder="Enter username" th:field="*{username}">
         <small id="usernameHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
     </div>
     <div class="form-group">
