@@ -57,7 +57,7 @@ public class MobileFitnessJournalController {
 
         userDao.save(newUser);
 
-        return "redirect:/homepage";
+        return "redirect:/login";
     }
 
     //-----------------ENDING CODE FOR USER REGISTRATION---------------
