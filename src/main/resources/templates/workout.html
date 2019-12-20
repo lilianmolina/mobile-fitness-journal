@@ -32,7 +32,10 @@
 <h3>Browse exercises</h3>
 <h6>Not sure which workouts to do today? Explore some workouts below, <br>
     watch videos for any you may not be familiar with and then proceed <br>
-    to create your workout of the day!</h6>
+    to create your workout of the day below!</h6>
+
+<!--Exercise Filter Table with Video Links-->
+
 <form th:object="${workout}" method="post"> <!--th:action="@{registration}"-->
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 
@@ -130,9 +133,33 @@ function myFunction() {
 }
 </script>
 </form>
+<!--CODE FOR TO-DO LIST-->
+<br>
+<br>
+<br>
+
+<div id="myDIV" class="header">
+    <h2>Workout of the Day</h2>
+    <h6>Add exercises below to be completed</h6>
+    <input type="text" id="myInput" placeholder="Title...">
+    <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+    <li>Planks</li>
+    <li class="checked">Crunches</li>
+    <li>Russian Twists</li>
+    <li>Bicep Curls</li>
+    <li>Push Press</li>
+    <li>Push Ups</li>
+    <li>Squats</li>
+    <li>Lunges</li>
+    <li>Deadlifts</li>
+</ul>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script type="text/javascript" src="js/script.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
