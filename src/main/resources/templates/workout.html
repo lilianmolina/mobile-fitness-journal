@@ -21,18 +21,18 @@
 
     <ul class="nav flex-column justify-content-right ">
         <li class="nav-item">
-            <a class="nav-link" href="login">Login to your Account</a>
+            <a class="nav-link" href="homepage">Log out of your account</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="homepage">Return to Home</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
     </ul>
 </head>
 <body>
-<h1>Create a workout below:</h1>
+<h3>Browse exercises</h3>
+<h6>Not sure which workouts to do today? Explore some workouts below, <br>
+    watch videos for any you may not be familiar with and then proceed <br>
+    to create your workout of the day!</h6>
 <form th:object="${workout}" method="post"> <!--th:action="@{registration}"-->
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 
@@ -53,36 +53,57 @@
             <td>Core</td>
             <td>Crunches</td>
             <td>
-                <a href="https://youtu.be/pvIjsG5Svck">Tutorial</a>
+                <a href="https://youtu.be/Xyd_fa5zoEU">Tutorial</a>
             </td>
         </tr>
         <tr>
             <td>Core</td>
             <td>Russian Twists</td>
+            <td>
+                <a href="https://youtu.be/Bkd23NHxnNo">Tutorial</a>
+            </td>
         </tr>
         <tr>
             <td>Upper Body</td>
             <td>Bicep Curls</td>
+            <td>
+                <a href="https://youtu.be/uO_CNYidOw0">Tutorial</a>
+            </td>
         </tr>
         <tr>
             <td>Upper Body</td>
             <td>Push Press</td>
+            <td>
+                <a href="https://youtu.be/MqvN10OF5fo">Tutorial</a>
+            </td>
         </tr>
         <tr>
             <td>Upper Body</td>
             <td>Push Ups</td>
+            <td>
+                <a href="https://youtu.be/Q7cPaJZoOng">Tutorial</a>
+            </td>
         </tr>
         <tr>
             <td>Lower Body</td>
             <td>Squats</td>
+            <td>
+                <a href="https://youtu.be/aclHkVaku9U">Tutorial</a>
+            </td>
         </tr>
         <tr>
             <td>Lower Body</td>
             <td>Lunges</td>
+            <td>
+                <a href="https://youtu.be/QOVaHwm-Q6U">Tutorial</a>
+            </td>
         </tr>
         <tr>
             <td>Lower Body</td>
             <td>Deadlifts</td>
+            <td>
+                <a href="https://youtu.be/IiGk8g3e41w">Tutorial</a>
+            </td>
         </tr>
     </table>
     <script>
