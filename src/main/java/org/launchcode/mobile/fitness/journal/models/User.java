@@ -16,12 +16,12 @@ public class User {
     private int id;
 
     @NotNull
-    @Size(min= 5, max= 15, message = "Username must be between 5 and 15 characters")
+    @Size(min = 5, max = 15, message = "Username must be between 5 and 15 characters")
     private String username;
 
 
     @NotNull
-    @Size(min=5, message = "Password must be at least 5 characters long")
+    @Size(min = 5, message = "Password must be at least 5 characters long")
     private String password;
 
 //    @Transient
@@ -38,7 +38,8 @@ public class User {
         this.password = password;
     }
 
-    public User() {}
+    public User() {
+    }
 
     public String getUsername() {
         return username;
@@ -58,25 +59,5 @@ public class User {
         /*checkPassword();*/
     }
 
-/*
-    public String getVerifyPassword() { return verifyPassword; }
 
-    public void setVerifyPassword(String verifyPassword) {
-
-        this.verifyPassword = verifyPassword;
-        checkPassword();
-    }
-
-    private void checkPassword(){
-        if (password != null && verifyPassword != null && !password.equals(verifyPassword)) {
-            verifyPassword = null;
-        }
-
-
-    }
-*/
-
-/*    public List<Location> getLocation() {
-        return location;
-    }*/
 }

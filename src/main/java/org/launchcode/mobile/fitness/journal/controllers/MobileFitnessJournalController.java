@@ -44,7 +44,7 @@ public class MobileFitnessJournalController {
         return "registration";
     }
 
-    @RequestMapping(value = "registration", method = RequestMethod.POST)
+    @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String add(Model model, @ModelAttribute @Valid User newUser,
                       Errors errors) {
 
@@ -57,7 +57,7 @@ public class MobileFitnessJournalController {
 
         userDao.save(newUser);
 
-        return "redirect:/login";
+        return "login";
     }
 
     //-----------------ENDING CODE FOR USER REGISTRATION---------------
@@ -69,25 +69,25 @@ public class MobileFitnessJournalController {
 
     @RequestMapping(method = RequestMethod.GET, value = "login")
     public String login(Model model) {
-        model.addAttribute("title", "Log In");
-        /*model.addAttribute(new User());*/
         return "login";
     }
 
     @RequestMapping(value = "login", method = RequestMethod.POST)
-    public String login(Model model, @RequestParam String username, @RequestParam String password) {
+    public String login(@ModelAttribute(name = "User") User user, Model model, Errors errors) {
+        String username = user.getUsername();
+        String password = user.getPassword();
 
-        //check if username is not emtpy
-       //User user = userDao.findByUsername(username);
-        //if (password.equals(user.getPassword()))
-     // set cookie
-     // redirect to home page
-     return "home";
-/* else {
-     model.addAttribute("myerror", "Incorrect Login Info");
-     //user.setPassword("");
-     return "login";
- }*/
+        User myFoundUser = userDao.findByUsername(username);
+        if ( myFoundUser != null && password.equals(myFoundUser.getPassword())){
+            return "redirect:/homepage";
+        }
+        if (errors.hasErrors()) {
+            return "login";
+
+        }
+        model.addAttribute("invalidCredentials", true);
+        return "login";
+
     }
 
     //---------------ENDING CODE FOR USER LOGIN---------------------
