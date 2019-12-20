@@ -79,7 +79,7 @@ public class MobileFitnessJournalController {
 
         User myFoundUser = userDao.findByUsername(username);
         if ( myFoundUser != null && password.equals(myFoundUser.getPassword())){
-            return "redirect:/homepage";
+            return "redirect:/workout";
         }
         if (errors.hasErrors()) {
             return "login";
@@ -93,3 +93,4 @@ public class MobileFitnessJournalController {
     //---------------ENDING CODE FOR USER LOGIN---------------------
 
 }
+
